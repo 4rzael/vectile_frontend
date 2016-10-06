@@ -44,12 +44,12 @@ var hoverStyle = {
     "fillOpacity": 0.5
 };
 
-var geojsonURL = 'http://localhost:8080/trees/{z}/{x}/{y}.json';
+var geojsonURL = 'TILE_HOST:TILE_PORT/TILE_LAYER/{z}/{x}/{y}.json';
 
 setTimeout(function () {
 
   var geojsonTileLayer = new L.TileLayer.GeoJSON(geojsonURL, {
-          clipTiles: true,
+          clipTiles: false,
           unique: function (feature) {
               return feature.id; 
           }
